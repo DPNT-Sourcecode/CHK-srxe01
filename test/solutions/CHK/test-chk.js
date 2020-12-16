@@ -65,5 +65,3 @@ describe('CHK challenge: single item cart', function() {
 | T    | 20    |                        |
 | U    | 40    | 3U get one U free      |
 | V    | 50    | 2V for 90, 3V for 130  | */
-
-
