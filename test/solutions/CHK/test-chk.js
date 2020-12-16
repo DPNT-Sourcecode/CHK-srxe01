@@ -21,5 +21,6 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('EEB'), 80)
 		assert.equal(checkout('EB'), 70)
 		assert.equal(checkout('AAAAEEB'), 130 + 50 + 80)
+		assert.equal(checkout('AAAAAEEB'), 200 + 80)
 	})
 });
