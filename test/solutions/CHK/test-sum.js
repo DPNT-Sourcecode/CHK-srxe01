@@ -10,4 +10,10 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('B'), 30)
 		assert.equal(checkout('C'), 20)
 	})
+
+	it('should return -1 for invalid input', () => {
+		assert.equal(checkout('a'), -1)
+		assert.equal(checkout('-'), -1)
+		assert.equal(checkout('ABCa'), -1)
+	})
 });
