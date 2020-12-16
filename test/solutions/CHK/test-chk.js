@@ -5,7 +5,7 @@ var assert = require('assert');
 const checkout = require('../../../lib/solutions/CHK/checkout');
 
 describe('CHK challenge: single item cart', function() {
-	
+	/*
 	it('should return the correct price for single items', () => {
 		assert.equal(checkout('A'), 50)
 		assert.equal(checkout('B'), 30)
@@ -52,16 +52,21 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('UUUU'), 120)
 
 		assert.equal(checkout('NNN'), 120)
+	}) */
+
+	it('should handle group buys correctly', () => {
+		assert.equal(checkout('STX'), 45)
+		assert.equal(checkout('SSS'), 45)
+		assert.equal(checkout('WZZ'), 20 + 21 + 21)
 	})
 });
 
 
-/* | N    | 40    | 3N get one M free      |
-| O    | 10    |                        |
-| P    | 50    | 5P for 200             |
-| Q    | 30    | 3Q for 80              |
-| R    | 50    | 3R get one Q free      |
-| S    | 30    |                        |
-| T    | 20    |                        |
-| U    | 40    | 3U get one U free      |
-| V    | 50    | 2V for 90, 3V for 130  | */
+/* | S    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 | XX
+| T    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 | XX 
+| U    | 40    | 3U get one U free               |
+| V    | 50    | 2V for 90, 3V for 130           |
+| W    | 20    |                                 |
+| X    | 17    | buy any 3 of (S,T,X,Y,Z) for 45 | XX
+| Y    | 20    | buy any 3 of (S,T,X,Y,Z) for 45 | XX
+| Z    | 21    | buy any 3 of (S,T,X,Y,Z) for 45 | XX */
