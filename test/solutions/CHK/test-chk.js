@@ -24,14 +24,9 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('AAAAAEEB'), 200 + 80)
 		assert.equal(checkout('AAAAAAAEEB'), 200 + 100 + 80)
 
-		const cases = [
-			['AAAAAAAAAA', 400],
-			['EEEEBB', 160],
-			['BEBEEE', 160]
-		]
-		cases.map((case) => {
-			assert.equal(checkout(case[0]), case[1])
-		})
+		assert.equal(checkout('AAAAAAAAAA'), 400)
+		assert.equal(checkout('EEEEBB'), 160)
+		assert.equal(checkout('BEBEEE'), 160)
 	})
 });
 
