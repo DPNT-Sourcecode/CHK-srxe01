@@ -44,9 +44,22 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('FFFFFF'), 40)
 
 	})
+
+	it('should handle the new items correctly', () => {
+		assert.equal(checkout('OPPPPP'), 200 + 10)
+		assert.equal(checkout('RRRQ'), 150)
+		assert.equal(checkout('UUU'), 120)
+		assert.equal(checkout('UUUU'), 120)
+	})
 });
 
-/*
- - {"method":"checkout","params":["EE"],"id":"CHK_R2_023"}, expected: 80, got: 50
- - {"method":"checkout","params":["ABCDEABCDE"],"id":"CHK_R2_038"}, expected: 280, got: 265
- - {"method":"checkout","params":["CCADDEEBBA"],"id":"CHK_R2_039"}, expected: 280, got: 265 */
+
+/* | N    | 40    | 3N get one M free      |
+| O    | 10    |                        |
+| P    | 50    | 5P for 200             |
+| Q    | 30    | 3Q for 80              |
+| R    | 50    | 3R get one Q free      |
+| S    | 30    |                        |
+| T    | 20    |                        |
+| U    | 40    | 3U get one U free      |
+| V    | 50    | 2V for 90, 3V for 130  | */
