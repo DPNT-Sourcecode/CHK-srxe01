@@ -23,5 +23,19 @@ describe('CHK challenge: single item cart', function() {
 		assert.equal(checkout('AAAAEEB'), 130 + 50 + 80)
 		assert.equal(checkout('AAAAAEEB'), 200 + 80)
 		assert.equal(checkout('AAAAAAAEEB'), 200 + 100 + 80)
+
+		const cases = [
+			['AAAAAAAAAA', 400],
+			['EEEEBB', 160],
+			['BEBEEE', 160]
+		]
+		cases.map((case) => {
+			assert.equal(checkout(case[0]), case[1])
+		})
 	})
 });
+
+/*
+- {"method":"checkout","params":["AAAAAAAAAA"],"id":"CHK_R2_022"}, expected: 400, got: 430
+- {"method":"checkout","params":["EEEEBB"],"id":"CHK_R2_026"}, expected: 160, got: 175
+- {"method":"checkout","params":["BEBEEE"],"id":"CHK_R2_027"}, expected: 160, got: 175 */
