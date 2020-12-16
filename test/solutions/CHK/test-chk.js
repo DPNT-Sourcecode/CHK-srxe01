@@ -5,6 +5,7 @@ var assert = require('assert');
 const checkout = require('../../../lib/solutions/CHK/checkout');
 
 describe('CHK challenge: single item cart', function() {
+	/*
 	it('should return the correct price for single items', () => {
 		assert.equal(checkout('A'), 50)
 		assert.equal(checkout('B'), 30)
@@ -18,6 +19,7 @@ describe('CHK challenge: single item cart', function() {
 	})
 
 	it('should handle free offers correctly', () => {
+
 		assert.equal(checkout('EEB'), 80)
 		assert.equal(checkout('EB'), 70)
 		assert.equal(checkout('AAAAEEB'), 130 + 50 + 80)
@@ -32,6 +34,15 @@ describe('CHK challenge: single item cart', function() {
 
 		assert.equal(checkout('ABCDEABCDE'), 280)
 		assert.equal(checkout('CCADDEEBBA'), 280)
+	}) */
+	
+	it('should handle buy multi get free orders correctly', () => {
+		assert.equal(checkout('FFF'), 20)
+		assert.equal(checkout('FF'), 20)
+		assert.equal(checkout('FFFF'), 30)
+		assert.equal(checkout('FFFFF'), 40)
+		assert.equal(checkout('FFFFFF'), 40)
+
 	})
 });
 
